@@ -2,8 +2,8 @@ module.exports = {
     HOST: "[ISI]",
     USER: "[ISI]",
     PASSWORD: "[ISI]",
-    DB: "[ISI]",
-    dialect: "[ISI]",
+    DB: "postgres",
+    dialect: "postgres",
     pool: {
       max: 5,
       min: 0,
