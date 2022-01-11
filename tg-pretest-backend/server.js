@@ -16,17 +16,17 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
-db.sequelize.sync({ force: true }).then(() => {
-    console.log("Drop and re-sync db.");
-});
+// const db = require("./models");
+// db.sequelize.sync().then(() => {
+//     console.log("Re-sync db.");
+// });
 
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to TG-Backend application." });
 });
 
-require("./app/routes/tutorial.routes")(app);
+require("./routes/tutorial.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
