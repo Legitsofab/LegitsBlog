@@ -4,6 +4,17 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.sequelize.transaction((t) => {
       return Promise.all([
+        queryInterface.removeColumn("tutorials", "author", { transaction: t }),
+        queryInterface.removeColumn("tutorials", "likesCount", {
+          transaction: t,
+        }),
+      ]);
+    });
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    return queryInterface.sequelize.transaction((t) => {
+      return Promise.all([
         queryInterface.addColumn(
           "tutorials",
           "author",
@@ -16,22 +27,10 @@ module.exports = {
           "tutorials",
           "likesCount",
           {
-            type: Sequelize.DataTypes.INTEGER,
-            defaultValue: 0
+            type: Sequelize.DataTypes.STRING,
           },
           { transaction: t }
         ),
-      ]);
-    });
-  },
-
-  down: async (queryInterface, Sequelize) => {
-    return queryInterface.sequelize.transaction((t) => {
-      return Promise.all([
-        queryInterface.removeColumn("tutorials", "author", { transaction: t }),
-        queryInterface.removeColumn("tutorials", "likesCount", {
-          transaction: t,
-        }),
       ]);
     });
   },
