@@ -33,7 +33,7 @@ Pengguna dapat menghapus blog yang telah dibuat.
 1. Pull folder project dari repository ini
 2. Lakukan perintah `npm i` pada direktori masing - masing project (backend dan frontend) dan tunggu hingga selesai
 3. Pada bagian backend, ubah isi file `app\config\db.config.js` sesuai dengan kredensial Database PostgreSQL yang Anda miliki.
-4. Jalankan project backend dengan melakukan perintah `node server.js` pada direktori root project backend
+4. Jalankan project backend dengan melakukan perintah `npm run dev` pada direktori root project backend
 5. Jalankan project frontend dengan melakukan perintah `npm run build`, lalu `npm run start` pada direktori root project frontend
 6. Proyek Frontend dapat dilihat melalui `http://localhost:3000`
 7. Proyek Backend dapat dilihat melalui `http://localhost:8080`
